@@ -1,0 +1,110 @@
+.btns_board_wrapper {
+    position: absolute;
+    right: 41px;
+    top: 38%;
+    font-family: Poppins;
+
+    .btns_board {
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 60px;
+        border-radius: 34px;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .btn_todo {
+        cursor: pointer;
+
+    }
+
+    .btn_slider {
+        cursor: pointer;
+        height: 40px;
+        border-bottom: 1px solid rgb(255, 255, 255, 0.8);
+    }
+}
+
+.board {
+    position: absolute;
+    right: 100%;
+    top: -40%;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 370px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 30px;
+    transform-origin: right top;
+    border-radius: 30px;
+
+    .board_title {
+        color: #ffffff82;
+    }
+
+    .moods_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #aa8989;
+        padding: 20px 0;
+
+        .mood_type {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            padding: 30px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .mood_type.active {
+            background-color: #edcb55;
+        }
+    }
+
+    .volume_slider {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        .icon {
+            cursor: pointer;
+        }
+
+        input {
+            width: 80%;
+            cursor: pointer;
+        }
+    }
+
+    .noise_wrapper {
+        padding-top: 20px;
+        border-top: 1px solid rgb(255 255 255 / 40%);
+        margin: 32px 0 0 0;
+
+        .noise_type {
+            display: grid;
+            grid-template-columns: 32% 68%;
+            padding: 10px 0;
+
+            p {
+                color: #ffffff;
+                text-wrap: nowrap;
+            }
+
+        }
+    }
+
+    input {
+        accent-color: #edcb55;
+
+    }
+}

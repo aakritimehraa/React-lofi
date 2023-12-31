@@ -1,0 +1,11 @@
+.music-player-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    button{
+        background: transparent;
+        outline: none;
+        border: none;
+    }
+}
