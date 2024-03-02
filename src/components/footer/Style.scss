@@ -6,6 +6,20 @@
     align-items: center;
     width: 100%;
     padding:0 40px;
+    @media (max-width: 800px) {
+
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    }
+    @media (max-width: 500px) {
+    flex-direction: column;
+}
     h2{
         color: #ffffff;
         font-family: 'Poppins', sans-serif;   
