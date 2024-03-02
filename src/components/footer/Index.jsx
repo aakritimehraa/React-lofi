@@ -11,7 +11,7 @@ function Footer() {
   return (
     <div className='footer'>
       <h2>Song Name : {getSongName(moodMode, currentSongIndex)}</h2>
-      <h2>Made by <a target='_blank' href='https://www.linkedin.com/in/aakriti-mehra-7687021b7/' >Aakriti Mehra </a></h2>
+      <h2>Made by <a target='_blank'  rel="noreferrer" href='https://www.linkedin.com/in/aakriti-mehra-7687021b7/' >Aakriti Mehra </a></h2>
       {moodMode === 'chill' ? (
         <Player
           currentSongIndex={currentSongIndex}
