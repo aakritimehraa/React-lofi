@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Style.scss';
-import { FaSlidersH} from "react-icons/fa";
+import { FaSlidersH } from "react-icons/fa";
 import { RiTodoLine } from "react-icons/ri";
 import { useDispatch, useSelector } from 'react-redux';
 import { changeMoodStatus } from '../../reducers/moodSlice';
 import { changeFireVolume, changeRiverVolume, changeTrafficVolume, changeVolume } from '../../reducers/changeVolumeSlice';
 import MoodBoard from './MoodBoard';
-import ReactAudioPlayer from 'react-audio-player';
 import trafficSound from '../../assets/audios/traffic.mp3';
 import riverSound from '../../assets/audios/river.mp3';
 import fireSound from '../../assets/audios/fire.mp3';
@@ -22,6 +21,34 @@ function BtnsBoard() {
 
   const [openMood, setOpenMood] = useState(false);
   const [openTodo, setOpenTodo] = useState(false);
+
+  const trafficAudioRef = useRef(null);
+  const fireAudioRef = useRef(null);
+  const riverAudioRef = useRef(null);
+
+  useEffect(() => {
+    if (trafficAudioRef.current) {
+      trafficAudioRef.current.volume = traffic / 100;
+    }
+    if (fireAudioRef.current) {
+      fireAudioRef.current.volume = fire / 100;
+    }
+    if (riverAudioRef.current) {
+      riverAudioRef.current.volume = river / 100;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (trafficAudioRef.current) {
+      trafficAudioRef.current.volume = traffic / 100;
+    }
+    if (fireAudioRef.current) {
+      fireAudioRef.current.volume = fire / 100;
+    }
+    if (riverAudioRef.current) {
+      riverAudioRef.current.volume = river / 100;
+    }
+  }, [traffic, fire, river]);
 
   const openMoodHandler = () => {
     setOpenMood(!openMood);
@@ -59,28 +86,9 @@ function BtnsBoard() {
 
   return (
     <div className="btns_board_wrapper">
-      {/* Always Render Audio Players */}
-      <ReactAudioPlayer
-        preload="auto"
-        autoPlay
-        loop
-        src={trafficSound}
-        volume={traffic / 100}
-      />
-      <ReactAudioPlayer
-        preload="auto"
-        autoPlay
-        loop
-        src={fireSound}
-        volume={fire / 100}
-      />
-      <ReactAudioPlayer
-        preload="auto"
-        autoPlay
-        loop
-        src={riverSound}
-        volume={river / 100}
-      />
+      <audio ref={trafficAudioRef} src={trafficSound} loop autoPlay />
+      <audio ref={fireAudioRef} src={fireSound} loop autoPlay />
+      <audio ref={riverAudioRef} src={riverSound} loop autoPlay />
 
       <div className="btns_board">
         <div className="btn_slider">
@@ -110,5 +118,3 @@ function BtnsBoard() {
 }
 
 export default BtnsBoard;
-
-
