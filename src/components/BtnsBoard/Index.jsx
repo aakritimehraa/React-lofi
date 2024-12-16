@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Style.scss';
 import { FaSlidersH} from "react-icons/fa";
 import { RiTodoLine } from "react-icons/ri";
