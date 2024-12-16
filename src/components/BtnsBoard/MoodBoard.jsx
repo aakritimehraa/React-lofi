@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { changeVolume } from "../../reducers/changeVolumeSlice";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
-import { useEffect } from "react";
 
 const MoodBoard = ({
     changeNoiseVolumeHandler,
